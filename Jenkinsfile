@@ -9,15 +9,11 @@ pipeline {
           }
         }
 
-        stage('build app') {
-          agent {
-            docker {
-              image 'gradle:6.8.3-jdk11'
-            }
-
-          }
+        stage('borrar directorio') {
           steps {
-            sh 'ci/build-app.sh'
+            sh 'ls '
+            deleteDir()
+            sh 'ls'
           }
         }
 
