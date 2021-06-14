@@ -1,10 +1,5 @@
 pipeline {
-  agent {
-    node {
-      label 'swarm'
-    }
-
-  }
+  agent any
   stages {
     stage('Parallel execution') {
       parallel {
