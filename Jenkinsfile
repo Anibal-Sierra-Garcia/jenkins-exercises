@@ -24,8 +24,7 @@ pipeline {
 
         stage('build app') {
           steps {
-            sh '''whoami
-hostname'''
+            sh 'ci/build-app.sh'
           }
         }
 
