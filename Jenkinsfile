@@ -1,5 +1,10 @@
 pipeline {
-  agent any
+  agent {
+    node {
+      label 'swarm'
+    }
+
+  }
   stages {
     stage('Parallel execution') {
       parallel {
@@ -14,6 +19,12 @@ pipeline {
             sh 'ls '
             deleteDir()
             sh 'ls'
+          }
+        }
+
+        stage('build app') {
+          steps {
+            sh './ci/build-app.sh'
           }
         }
 
