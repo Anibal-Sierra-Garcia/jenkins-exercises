@@ -24,7 +24,7 @@ pipeline {
 
         stage('build app') {
           steps {
-            sh '''pwd
+            sh '''whoami
 hostname'''
           }
         }
