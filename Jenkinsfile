@@ -24,7 +24,7 @@ pipeline {
 
         stage('build app') {
           steps {
-            sh './ci/build-app.sh'
+            sh 'ci/build-app.sh'
           }
         }
 
